@@ -1,9 +1,9 @@
 # daily_reminder.py
 
 # Prompt for user input task
-task = input("Enter your task for today: ")
-priority = input("What is the priority level? (high/medium/low): ").strip().lower()
-time_bound = input("Is this task time-bound? (yes/no): ").strip().lower()
+Task = input("Enter your task for today: ")
+Priority = input("What is the priority level? (high/medium/low): ").strip().lower()
+Time_bound = input("Is this task time-bound? (yes/no): ").strip().lower()
 
 # Process the task using match-case priority
 match priority:
