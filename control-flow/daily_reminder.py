@@ -15,8 +15,9 @@ match priority:
         reminder = f"🟢 Low priority task: {task}"
     case _:
         reminder = f"⚪ Unrecognized priority for task: {task}"
-# Modify reminder if time-sensitive
-if time_bound.lower() == "yes":
+
+# Apply time sensitivity check with exact syntax
+if time_bound == "yes":
     reminder += " — that requires immediate attention today!"
 
 # Display the customized reminder
