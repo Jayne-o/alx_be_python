@@ -20,6 +20,6 @@ match priority:
 if time_bound == "yes":
     reminder += " — that requires immediate attention today!"
 
-# Display the customized reminder
-print("\nYour Daily Reminder:")
-print(reminder)
+# Display the customized reminder with required print format
+print(f"Reminder: {reminder}")
+
