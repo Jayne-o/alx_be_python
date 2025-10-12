@@ -19,14 +19,17 @@ class Circle(Shape):
     def area(self):
         return math.pi * self.radius ** 2
 
- from polymorphism_demo import Rectangle, Circle
+ from polymorphism_demo import Shape, Rectangle, Circle
+import math
 
 def main():
-    rect = Rectangle(10, 5)
-    circ = Circle(7)
+    shapes = [
+        Rectangle(10, 5),
+        Circle(7)
+    ]
 
-    print(f"The area of the Rectangle is: {rect.area()}")
-    print(f"The area of the Circle is: {circ.area()}")
+    for shape in shapes:
+        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
 
 if __name__ == "__main__":
     main()
