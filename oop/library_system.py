@@ -4,16 +4,16 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        return f"Book: {self.title} by {self.author}"
 
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
-        self.file_size = file_size  # in MB
+        self.file_size = file_size  # in KB
 
     def __str__(self):
-        return f"{super().__str__()} [EBook, {self.file_size}MB]"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
 class PrintBook(Book):
@@ -22,43 +22,22 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"{super().__str__()} [PrintBook, {self.page_count} pages]"
-
-
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def add_book(self, book):
-        if isinstance(book, Book):
-            self.books.append(book)
-        else:
-            print("Only Book instances can be added.")
-
-    def list_books(self):
-        for book in self.books:
-            print(book)
-
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 from library_system import Book, EBook, PrintBook, Library
 
 def main():
-    # Create a library
-    my_library = Library()
+    library = Library()
 
-    # Create books
-    book1 = Book("To Kill a Mockingbird", "Harper Lee")
-    ebook1 = EBook("Digital Fortress", "Dan Brown", 5)
-    printbook1 = PrintBook("The Hobbit", "J.R.R. Tolkien", 310)
+    book1 = Book("Pride and Prejudice", "Jane Austen")
+    ebook1 = EBook("Snow Crash", "Neal Stephenson", 500)  # file size in KB
+    printbook1 = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
 
-    # Add books to the library
-    my_library.add_book(book1)
-    my_library.add_book(ebook1)
-    my_library.add_book(printbook1)
+    library.add_book(book1)
+    library.add_book(ebook1)
+    library.add_book(printbook1)
 
-    # List all books
-    my_library.list_books()
+    library.list_books()
 
 if __name__ == "__main__":
     main()
-      
