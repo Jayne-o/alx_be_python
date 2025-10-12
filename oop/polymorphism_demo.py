@@ -4,7 +4,6 @@ class Shape:
     def area(self):
         raise NotImplementedError("Subclasses must implement the area method.")
 
-
 class Rectangle(Shape):
     def __init__(self, length, width):
         self.length = length
@@ -13,7 +12,6 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
 
-
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -21,16 +19,14 @@ class Circle(Shape):
     def area(self):
         return math.pi * self.radius ** 2
 
-  from polymorphism_demo import Rectangle, Circle
+ from polymorphism_demo import Rectangle, Circle
 
 def main():
-    shapes = [
-        Rectangle(10, 5),
-        Circle(7)
-    ]
+    rect = Rectangle(10, 5)
+    circ = Circle(7)
 
-    for shape in shapes:
-        print(f"Area: {shape.area():.2f}")
+    print(f"The area of the Rectangle is: {rect.area()}")
+    print(f"The area of the Circle is: {circ.area()}")
 
 if __name__ == "__main__":
     main()
