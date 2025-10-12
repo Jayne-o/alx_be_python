@@ -24,6 +24,18 @@ class PrintBook(Book):
     def __str__(self):
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
+
+class Library:
+    def __init__(self):
+        self.books = []  # ✅ Required initialization
+
+    def add_book(self, book):
+        self.books.append(book)  # ✅ Required append
+
+    def list_books(self):
+        for book in self.books:
+            print(book)
+
 from library_system import Book, EBook, PrintBook, Library
 
 def main():
