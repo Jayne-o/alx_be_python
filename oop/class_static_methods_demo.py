@@ -7,19 +7,19 @@ class Calculator:
 
     @classmethod
     def multiply(cls, a, b):
-        print(cls.calculation_type)
+        print(f"Calculation type: {cls.calculation_type}")
         return a * b
 
   from class_static_methods_demo import Calculator
 
-def main():
-    # Static method call
-    result_add = Calculator.add(10, 5)
-    print(f"Addition Result: {result_add}")
+from class_static_methods_demo import Calculator
 
-    # Class method call
-    result_multiply = Calculator.multiply(10, 5)
-    print(f"Multiplication Result: {result_multiply}")
+def main():
+    result_sum = Calculator.add(10, 5)
+    print(f"The sum is: {result_sum}")
+
+    result_product = Calculator.multiply(10, 5)
+    print(f"The product is: {result_product}")
 
 if __name__ == "__main__":
     main()
